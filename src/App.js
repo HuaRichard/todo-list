@@ -1,28 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import AddTodo from './components/AddTodo'
+import TodoList from './components/TodoList/TodoList'
+import AllButton from './components/Buttons/AllButton'
+import CompletedButton from './components/Buttons/CompletedButton'
+import TodoButton from './components/Buttons/TodoButton'
+import DeleteCompletedButton from './components/Buttons/DeleteCompletedButton'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const App = () => {
+  const [state, setState] = useState([]);
+  const [active, setActive] = useState({ active: 'ALL' });
+  return (
+    <div>
+      <AddTodo state={state} setState={setState} />
+      {/* <TodoList state={state} />
+      <AllButton active={active} setActive={setActive} />
+      <CompletedButton active={active} setActive={setActive} />
+      <TodoButton active={active} setActive={setActive} />
+      <DeleteCompletedButton todos={state} setTodos={setState} /> */}
+    </div>
+  );
 }
 
 export default App;
