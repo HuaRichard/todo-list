@@ -10,11 +10,16 @@ const stateList = (state, active) => {
     }
 }
 
-const TodoList = ({ state, active }) => {
+const TodoList = ({ state, active, setState }) => {
     return (
-        stateList(state, active).map(todo => (<Todo
+        <ul>
+        {stateList(state, active).map(todo => (<Todo
+            id={todo.id}
             text={todo.text}
-            completed={todo.completed} />))
+            completed={todo.completed}
+            setState={setState}
+            state={state} />))}
+        </ul>
     )
 }
 

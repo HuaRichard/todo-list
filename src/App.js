@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div>
       <AddTodo state={state} setState={setState} />
-      <TodoList state={state} active={active} />
+      <TodoList state={state} active={active} setState={setState}/>
       {/* <AllButton active={active} setActive={setActive} />
       <CompletedButton active={active} setActive={setActive} />
       <TodoButton active={active} setActive={setActive} />
