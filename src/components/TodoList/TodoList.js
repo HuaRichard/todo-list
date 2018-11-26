@@ -14,6 +14,7 @@ const TodoList = ({ state, active, setState }) => {
     return (
         <ul>
         {stateList(state, active).map(todo => (<Todo
+            key={todo.id}
             id={todo.id}
             text={todo.text}
             completed={todo.completed}

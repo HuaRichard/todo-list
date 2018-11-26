@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ToggleCompleteState = (state, id) => {
     let newState = [];
@@ -13,11 +13,9 @@ const ToggleCompleteState = (state, id) => {
 }
 
 const Todo = ({ text, completed, id, setState, state }) => {
-    const [completeState, setCompleteState] = useState(completed);
     return (
-        <li style={{ textDecoration: (completeState) ? 'line-through' : 'none' }}
+        <li style={{ textDecoration: (completed) ? 'line-through' : 'none' }}
             onClick={() => {
-                setCompleteState(!completeState);
                 setState(ToggleCompleteState(state, id));
             }}>
             {text}

@@ -9,15 +9,15 @@ import DeleteCompletedButton from './components/Buttons/DeleteCompletedButton'
 
 const App = () => {
   const [state, setState] = useState([]);
-  const [active, setActive] = useState({ active: 'ALL' });
+  const [active, setActive] = useState('ALL');
   return (
     <div>
       <AddTodo state={state} setState={setState} />
       <TodoList state={state} active={active} setState={setState}/>
-      {/* <AllButton active={active} setActive={setActive} />
+      <AllButton active={active} setActive={setActive} />
       <CompletedButton active={active} setActive={setActive} />
       <TodoButton active={active} setActive={setActive} />
-      <DeleteCompletedButton todos={state} setTodos={setState} /> */}
+      <DeleteCompletedButton state={state} setState={setState} />
     </div>
   );
 }
